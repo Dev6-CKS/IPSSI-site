@@ -18,7 +18,7 @@ var App = React.createClass({
       <Locations hash>
         <Location path="/" handler={Home} />
       </Locations>
-    )
+    );
   }
 });
 
