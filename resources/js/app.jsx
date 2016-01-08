@@ -4,6 +4,7 @@ var Router = require('react-router-component');
 
 window.React = React;
 window._ = require('lodash');
+window.misc = require('./misc');
 
 //Locations
 var Locations = Router.Locations;
@@ -15,9 +16,9 @@ var Home = require('./components/home/HomeComponent.jsx');
 var App = React.createClass({
   render: function() {
     return (
-      <Locations hash>
-        <Location path="/" handler={Home} />
-      </Locations>
+      	<Locations hash>
+        	<Location path="/" handler={Home} />
+      	</Locations>
     );
   }
 });
