@@ -1,3 +1,18 @@
+.Home {
+  width: 950px;
+  margin: auto;
+}
+.Home .Header {
+  height: 50px;
+}
+.Home .Header .Logo {
+  height: 50px;
+}
+.Home .Header .Header_actions {
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+}
 body {
-  color: red;
+  font-family: 'Open Sans';
 }

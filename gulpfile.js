@@ -7,6 +7,13 @@ var reactify        = require('reactify');
 var source          = require('vinyl-source-stream');
 var handleErrors    = require('./gulpHandleErrors');
 
+var showFileUpdated = function(files){
+    console.log('File(s) updated :');
+    files.forEach(function(file){
+        console.log('-' + file);
+    });
+};
+
 gulp.task('less', function () {
     gulp.src('resources/assets/less/main.less') // path to your file
         .pipe(less({strictMath: true}).on('error', handleErrors))
@@ -16,18 +23,18 @@ gulp.task('less', function () {
 gulp.task('watch', function() {
   gulp.watch('resources/assets/less/**/*.less', ['less']);
 
-  var watcher  = watchify(browserify({
+  var watcher = watchify(browserify({
     entries: ['resources/js/app.jsx'],
     transform: [reactify],
     debug: true,
     cache: {}, packageCache: {}, fullPaths: true
   }));
 
-  return watcher.on('update', function () {
-    watcher.bundle()
+  return watcher.on('update', function (files) {
+    watcher.bundle().on('error', handleErrors)
       .pipe(source('main.js'))
       .pipe(gulp.dest('public/js'))
-      console.log('Updated');
+      showFileUpdated(files);
   })
     .bundle()
     .pipe(source('main.js'))

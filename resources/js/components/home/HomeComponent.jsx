@@ -1,36 +1,26 @@
-//Stores
-var AppStore = require('../../stores/AppStore');
-
-//Actions
-var AppActions = require('../../actions/AppActions');
-
-var googleServices = require('../../services/google/GoogleServices');
-
 var HomeComponent = React.createClass({
     /******************************** DISPLAY METHODS ********************************/
     render: function() {
         return (
-            <div>
-                <button onClick={this.action}>ACTION</button>
-                <button onClick={_.bind(googleServices.startGoogleApi, googleServices)}>GOOGLE API</button>
-                <button onClick={_.bind(googleServices.authorize, googleServices)}>AUTH</button>
+            <div className="Home">
+                <header className="Header">
+                    <img src="http://www.defi-metiers.fr/sites/default/files/doc-kelios/Logo/2015/08/04/LOGO_IPSSI_GROUPE_IP_FORMATION.png" className="Logo"/>
+                    <div className="Header_actions">
+                        <div className="Search_bar">
+                            <input type="text" className="Search_input"/>
+                            <button className="Search_button"><i className="fa fa-search"/></button>
+                        </div>
+                    </div>
+                </header>
             </div>
         );
     },
     
     /******************************** LIFECYCLE METHODS ********************************/
     
-    componentDidMount:function(){
-        AppStore.on(AppStore.Events.APP_EVENT, function(){
-            console.log('EVENEMENT RECU !');
-        });
-    },
     
     /******************************** CUSTOM METHODS ********************************/
-    
-    action:function(){
-        AppActions.action('data');
-    }
+
 });
 
 module.exports = HomeComponent;

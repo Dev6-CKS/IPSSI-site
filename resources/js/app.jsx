@@ -5,6 +5,8 @@ var Router = require('react-router-component');
 window.React = React;
 window._ = require('lodash');
 window.misc = require('./misc');
+window.AppActions = require('./actions/AppActions');
+window.AppStore = require('./stores/AppStore');
 
 //Locations
 var Locations = Router.Locations;

@@ -14,9 +14,11 @@
     "envify": "^3.4.0",
     "flux": "^2.1.1",
     "laravel-elixir": "^2.0.0",
+    "less": "^2.6.0",
     "lodash": "^3.9.3",
     "object-assign": "^4.0.1",
     "react": "^0.14.3",
+    "react-dom": "^0.14.7",
     "react-router-component": "^0.28.0",
     "superagent": "^1.6.1"
   },
