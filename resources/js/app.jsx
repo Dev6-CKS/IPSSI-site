@@ -1,28 +1,15 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Router = require('react-router-component');
-
-window.React = React;
-window._ = require('lodash');
-window.misc = require('./misc');
-window.AppActions = require('./actions/AppActions');
-window.AppStore = require('./stores/AppStore');
-
-//Locations
-var Locations = Router.Locations;
-var Location = Router.Location;
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Locations } from 'react-router-component'
+import { Location } from 'react-router-component'
 
 //Components
-var Home = require('./components/home/HomeComponent.jsx');
+import Home from './components/home/HomeComponent'
 
-var App = React.createClass({
-  render: function() {
-    return (
-      	<Locations hash>
-        	<Location path="/" handler={Home} />
-      	</Locations>
-    );
-  }
-});
+const App = () => (
+	<Locations hash>
+  	<Location path="/" handler={Home} />
+	</Locations>
+)
 
-ReactDOM.render(<App/>, document.querySelector('#container'));
+ReactDOM.render(<App/>, document.querySelector('#container'))
