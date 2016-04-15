@@ -15,9 +15,20 @@ class AboutController extends Controller
         return view('about.contact');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-    	return \Redirect::route('contact')
-      ->with('message', 'Thanks for contacting us!');
+
+	    \Mail::send('emails.contact',
+	        array(
+	            'name' => $request->get('name'),
+	            'email' => $request->get('email'),
+	            'user_message' => $request->get('message')
+	        ), function($message)
+	    {
+	        $message->from('wj@wjgilmore.com');
+	        $message->to('wj@wjgilmore.com', 'Admin')->subject('IPSSI Feedback');
+	    });
+
+	  return \Redirect::route('contact')->with('message', 'Thanks for contacting us!');
     }
 }

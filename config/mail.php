@@ -25,10 +25,10 @@ return [
     | Here you may provide the host address of the SMTP server used by your
     | applications. A default option is provided that is compatible with
     | the Mailgun mail service which will provide reliable deliveries.
-    |
+    |   default : smtp.mailgun.org
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -38,10 +38,10 @@ return [
     | This is the SMTP port used by your application to deliver e-mails to
     | users of the application. Like the host we have set this value to
     | stay compatible with the Mailgun e-mail application by default.
-    |
+    |   default value : 587
     */
 
-    'port' => env('MAIL_PORT', 587),
+    'port' => env('MAIL_PORT', 465),
 
     /*
     |--------------------------------------------------------------------------
@@ -64,10 +64,10 @@ return [
     | Here you may specify the encryption protocol that should be used when
     | the application send e-mail messages. A sensible default using the
     | transport layer security protocol should provide great security.
-    |
+    |   default : tls
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
 
     /*
     |--------------------------------------------------------------------------
