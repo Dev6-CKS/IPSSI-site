@@ -1,4 +1,4 @@
-<h1>Contact TODOParrot</h1>
+<h1>Contact Form</h1>
 
 <ul>
     @foreach($errors->all() as $error)
