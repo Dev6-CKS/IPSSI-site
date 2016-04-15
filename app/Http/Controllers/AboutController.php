@@ -25,8 +25,8 @@ class AboutController extends Controller
 	            'user_message' => $request->get('message')
 	        ), function($message)
 	    {
-	        $message->from('wj@wjgilmore.com');
-	        $message->to('wj@wjgilmore.com', 'Admin')->subject('IPSSI Feedback');
+	        $message->from('ipssi.lyon@gmail.com');
+	        $message->to('ipssi.lyon@gmail.com', 'Admin')->subject('IPSSI Feedback');
 	    });
 
 	  return \Redirect::route('contact')->with('message', 'Thanks for contacting us!');
