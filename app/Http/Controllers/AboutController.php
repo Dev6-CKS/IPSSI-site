@@ -46,11 +46,6 @@ class AboutController extends Controller
 	    } else {
 	        // validation successful ---------------------------
 
-	        // our duck has passed all tests!
-	        // let him enter the database
-
-	        // create the data for our duck
-
 		    \Mail::send('emails.contact',
 		        array(
 		            'name' => $request->get('name'),
