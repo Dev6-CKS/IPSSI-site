@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'fr',
 
     /*
     |--------------------------------------------------------------------------
@@ -136,6 +136,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        'Illuminate\Html\HtmlServiceProvider',
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -191,6 +193,9 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        'Form'      => 'Illuminate\Html\FormFacade',
+        'Html'      => 'Illuminate\Html\HtmlFacade',
+        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
 
     ],
 
