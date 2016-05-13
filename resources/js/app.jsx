@@ -4,7 +4,7 @@ import { Locations } from 'react-router-component'
 import { Location } from 'react-router-component'
 
 //Components
-import Home from './components/home/HomeComponent'
+import Home from './components/home/Home'
 
 const App = () => (
 	<Locations hash>
