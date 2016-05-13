@@ -43,7 +43,7 @@ gulp.task('less', () => {
   gulp.src('resources/assets/less/main.less')
     .pipe(less({strictMath: true}).on('error', handleErrors))
     .pipe(browserSync.reload({stream:true}))
-    .pipe(gulp.dest('./public/css'));
+    .pipe(gulp.dest('./public/style'));
 })
 
 gulp.task('watch', ['browser-sync'], () => {
